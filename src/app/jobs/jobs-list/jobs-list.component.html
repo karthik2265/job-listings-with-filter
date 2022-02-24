@@ -1,1 +1,5 @@
-<p>jobs-list works!</p>
+<div [ngClass]='{"view-layout": viewLayout}' class="jobs-list-space">
+  <app-job [viewLayout]='viewLayout' (filterJobsEventBubble1)='filterJobs()' *ngFor='let job of jobs'
+    [jobDetails]='job'>
+  </app-job>
+</div>

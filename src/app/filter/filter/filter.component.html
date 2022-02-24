@@ -1,1 +1,11 @@
-<p>filter works!</p>
+<div [ngClass]='{"view-layout": viewLayout}' class="background-image">
+  <div *ngIf='showFilter' class="filter">
+    <div class="options-space">
+      <div *ngFor='let option of options' class="option">
+        <p>{{option}}</p>
+        <div (click)="removeOptionFromFilter(option)" class="delete-button"></div>
+      </div>
+    </div>
+    <p (click)='removeAllOptions()' class="clear-button">Clear</p>
+  </div>
+</div>

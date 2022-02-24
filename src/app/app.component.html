@@ -1,0 +1,6 @@
+<div [ngClass]='{
+  "view-layout": viewLayout
+}'>
+  <app-filter [viewLayout]='viewLayout' (filterJobsEvent)='filterJobs()'></app-filter>
+  <app-jobs-list [viewLayout]='viewLayout' (filterJobsEventBubble2)='filterJobs()' [jobs]='jobs'></app-jobs-list>
+</div>
