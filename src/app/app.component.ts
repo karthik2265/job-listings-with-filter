@@ -9,18 +9,11 @@ import { JobsService } from './services/jobs.service';
 })
 export class AppComponent implements OnInit {
   title = 'job-listings-with-filter';
-  jobs: any = [];
   viewLayout: boolean = false;
 
-  constructor(private filterService: FilterService) {}
+  constructor() {}
 
-  filterJobs() {
-    this.jobs = this.filterService.filter();
-  }
-
-  ngOnInit() {
-    this.filterJobs();
-  }
+  ngOnInit() {}
 
   setViewLayout(value: boolean) {
     this.viewLayout = value;

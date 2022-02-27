@@ -1,4 +1,25 @@
 <div [ngClass]='{
-  "view-layout": viewLayout
-}'>
+  "view-layout": viewLayout,
+  "featured": isFeatured
+}' class="job">
+
+  <div class="{{jobDetails['company'] + '-logo' + ' company-logo' }}">
+  </div>
+
+  <div class="info">
+    <p class="company-title">{{jobDetails['company']}}
+      <span class="new-span" *ngIf='jobDetails["new"]'>NEW</span>
+      <span class="featured-span" *ngIf='jobDetails["featured"]'>FEATURED</span>
+    </p>
+    <p class="position">{{jobDetails['position']}}</p>
+    <ul>
+      <li style="list-style:none">{{jobDetails['postedAt']}}</li>
+      <li>{{jobDetails['contract']}}</li>
+      <li>{{jobDetails['location']}}</li>
+    </ul>
+  </div>
+
+  <div class="tags">
+    <p *ngFor='let tag of tags'>{{tag}}</p>
+  </div>
 </div>

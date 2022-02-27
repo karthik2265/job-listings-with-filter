@@ -64,3 +64,9 @@
   color: var(--Desaturated-Dark-Cyan);
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 565px) {
+  .background-image {
+    padding: 0 1.5rem;
+  }
+}

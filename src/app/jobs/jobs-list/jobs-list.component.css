@@ -1,3 +1,10 @@
 .jobs-list-space {
   padding: 0 5rem;
+  margin-top: 5rem;
+}
+
+@media only screen and (max-width: 565px) {
+  .jobs-list-space {
+    padding: 0 1.5rem;
+  }
 }

@@ -1,0 +1,175 @@
+.job {
+  margin-bottom: 2.5rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 6px;
+  /* display: flex; */
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  /* column-gap: 2rem; */
+  grid-template-rows: 1fr;
+  grid-template-columns: 10% 50% 40%;
+  align-items: center;
+}
+
+.job.featured {
+  border-left: 5px solid var(--Desaturated-Dark-Cyan);
+}
+
+.company-logo {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  background-size: 100%;
+}
+
+.info {
+  /* border: 1px solid red; */
+  margin-left: 2rem;
+}
+
+.company-title {
+  font-weight: 700;
+  color: var(--Desaturated-Dark-Cyan);
+}
+
+.new-span,
+.featured-span {
+  padding: 0.4rem 0.5rem;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.new-span {
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.featured-span {
+  background-color: black;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.position {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.position:hover {
+  color: var(--Desaturated-Dark-Cyan);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+}
+
+ul > li {
+  color: var(--Dark-Grayish-Cyan);
+  margin-right: 2.5rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-self: end;
+  /* border: 1px solid red; */
+}
+
+.tags > p {
+  padding: 0.5rem 1rem;
+  background-color: var(--Light-Grayish-Cyan);
+  color: var(--Desaturated-Dark-Cyan);
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.tags > p:hover {
+  cursor: pointer;
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  .job {
+    grid-template-rows: 0.5fr 1fr 1fr;
+    grid-template-columns: 100%;
+    justify-content: center;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    align-self: start;
+  }
+
+  .info {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    justify-self: start;
+    align-self: start;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--Dark-Grayish-Cyan);
+    width: 100%;
+  }
+  .tags {
+    justify-self: start;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  ul > li {
+    margin-right: 1.25rem;
+  }
+}
+
+/* set background image for each job */
+
+.Photosnap-logo {
+  background-image: url("./images/photosnap.svg");
+}
+
+.Manage-logo {
+  background-image: url("./images/manage.svg");
+}
+
+.Account-logo {
+  background-image: url("./images/account.svg");
+}
+
+.MyHome-logo {
+  background-image: url("./images/myhome.svg");
+}
+
+.Loop.Studios-logo {
+  background-image: url("./images/loop-studios.svg");
+}
+
+.FaceIt-logo {
+  background-image: url("./images/faceit.svg");
+}
+
+.Shortly-logo {
+  background-image: url("./images//shortly.svg");
+}
+
+.Insure-logo {
+  background-image: url("./images/insure.svg");
+}
+
+.Eyecam {
+  background-image: url("./images/eyecam-co.svg");
+}
+
+.The.Air.Filter.Company-logo {
+  background-image: url("./images/the-air-filter-company.svg");
+}

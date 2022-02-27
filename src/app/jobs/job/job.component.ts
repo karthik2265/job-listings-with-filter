@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FilterService } from 'src/app/services/filter.service';
-import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-job',
@@ -10,18 +9,25 @@ import { EventEmitter } from '@angular/core';
 export class JobComponent implements OnInit {
   constructor(private filterService: FilterService) {}
 
-  @Output() filterJobsEventBubble1 = new EventEmitter();
   @Input() jobDetails: any;
   @Input() viewLayout: any;
+  tags: string[] = [];
+  isFeatured: boolean = false;
 
-  addOptionToFilter(option: any) {
-    this.filterService.addOption(option);
-    this.filterJobs();
+  ngOnInit(): void {
+    // get all tags i.e role, level, languages, tools
+    let role = this.jobDetails['role'];
+    this.tags.push(role);
+    let level = this.jobDetails['level'];
+    this.tags.push(level);
+    for (let language of this.jobDetails['languages']) {
+      this.tags.push(language);
+    }
+    for (let tool of this.jobDetails['tools']) {
+      this.tags.push(tool);
+    }
+    // set isFeatured
+    this.isFeatured = this.jobDetails['featured'];
+    console.log(this.jobDetails);
   }
-
-  filterJobs() {
-    this.filterJobsEventBubble1.emit();
-  }
-
-  ngOnInit(): void {}
 }
