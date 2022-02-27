@@ -3,6 +3,8 @@
   height: 20vh;
   padding: 0 5rem;
   background-image: url("../../../images/bg-header-desktop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: var(--Desaturated-Dark-Cyan);
   display: flex;
   flex-direction: column;
@@ -68,5 +70,8 @@
 @media only screen and (max-width: 565px) {
   .background-image {
     padding: 0 1.5rem;
+    height: 30vh;
+    background-image: url("../../../images/bg-header-mobile.svg");
+    background-position: left;
   }
 }

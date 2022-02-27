@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FilterService } from 'src/app/services/filter.service';
+import { JobsService } from 'src/app/services/jobs.service';
 
 @Component({
   selector: 'app-job',
@@ -7,7 +8,10 @@ import { FilterService } from 'src/app/services/filter.service';
   styleUrls: ['./job.component.css'],
 })
 export class JobComponent implements OnInit {
-  constructor(private filterService: FilterService) {}
+  constructor(
+    public filterService: FilterService,
+    private jobsService: JobsService
+  ) {}
 
   @Input() jobDetails: any;
   @Input() viewLayout: any;
@@ -15,19 +19,9 @@ export class JobComponent implements OnInit {
   isFeatured: boolean = false;
 
   ngOnInit(): void {
-    // get all tags i.e role, level, languages, tools
-    let role = this.jobDetails['role'];
-    this.tags.push(role);
-    let level = this.jobDetails['level'];
-    this.tags.push(level);
-    for (let language of this.jobDetails['languages']) {
-      this.tags.push(language);
-    }
-    for (let tool of this.jobDetails['tools']) {
-      this.tags.push(tool);
-    }
     // set isFeatured
     this.isFeatured = this.jobDetails['featured'];
-    console.log(this.jobDetails);
+    // get tags
+    this.tags = this.jobsService.getTags(this.jobDetails);
   }
 }

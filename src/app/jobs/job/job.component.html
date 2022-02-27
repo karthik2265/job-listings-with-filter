@@ -20,6 +20,6 @@
   </div>
 
   <div class="tags">
-    <p *ngFor='let tag of tags'>{{tag}}</p>
+    <p *ngFor='let tag of tags' (click)='filterService.addOption(tag)'>{{tag}}</p>
   </div>
 </div>
