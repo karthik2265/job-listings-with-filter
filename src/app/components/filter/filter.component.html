@@ -1,6 +1,5 @@
-<div [ngClass]='{"view-layout": viewLayout}
-' class="background-image">
-  <div *ngIf='filterService.getOptionsSize() >= 1' class="filter">
+<div class="background-image">
+  <div *ngIf=' filterService.getOptionsSize()>= 1' class="filter">
     <div class="options-space">
       <div *ngFor='let option of filterService.optionsSet' class="option">
         <p>{{option}}</p>

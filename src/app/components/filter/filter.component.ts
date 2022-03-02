@@ -9,7 +9,5 @@ import { FilterService } from 'src/app/services/filter.service';
 export class FilterComponent implements OnInit {
   constructor(public filterService: FilterService) {}
 
-  @Input() viewLayout: any;
-
   ngOnInit(): void {}
 }

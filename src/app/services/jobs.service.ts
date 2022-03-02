@@ -12,6 +12,7 @@ export class JobsService {
     return this.http.get(this.jobsUrl);
   }
 
+  
   getTags(jobDetails: any) {
     let tags = [];
     // get all tags i.e role, level, languages, tools

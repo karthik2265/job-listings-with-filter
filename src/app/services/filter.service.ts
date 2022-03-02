@@ -17,6 +17,15 @@ export class FilterService {
 
   optionsSet = new Set();
 
+  getJobDetailsById(id: number) {
+    for (let job of this.jobs) {
+      if (job['id'] === id) {
+        return job;
+      }
+    }
+    return null;
+  }
+
   isOptionsEmpty() {
     return this.optionsSet.size === 0;
   }

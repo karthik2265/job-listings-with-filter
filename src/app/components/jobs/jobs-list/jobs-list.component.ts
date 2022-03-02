@@ -9,5 +9,4 @@ import { Input } from '@angular/core';
 })
 export class JobsListComponent {
   constructor(public filterService: FilterService) {}
-  @Input() viewLayout: any;
 }

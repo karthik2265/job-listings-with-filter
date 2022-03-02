@@ -14,7 +14,6 @@ export class JobComponent implements OnInit {
   ) {}
 
   @Input() jobDetails: any;
-  @Input() viewLayout: any;
   tags: string[] = [];
   isFeatured: boolean = false;
 
